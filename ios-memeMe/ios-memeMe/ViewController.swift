@@ -17,6 +17,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var sharedButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+
+    var memes: [Meme]? {
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        return appDelegate.memes
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +78,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     func save() {
         // Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+
     }
 
     func generateMemedImage() -> UIImage {
@@ -121,6 +132,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

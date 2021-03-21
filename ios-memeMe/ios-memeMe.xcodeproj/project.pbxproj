@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF45EB262607C70500D19E80 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45EB242607C70500D19E80 /* MyTableViewCell.swift */; };
+		BF45EB272607C70500D19E80 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF45EB252607C70500D19E80 /* MyTableViewCell.xib */; };
+		BF541E9125FEAA4D00599026 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF541E9025FEAA4D00599026 /* TabBarViewController.swift */; };
+		BF5421982601876D00599026 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5421972601876D00599026 /* MyTableViewController.swift */; };
+		BF5421A0260188DB00599026 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54219E260188DB00599026 /* MyCollectionViewCell.swift */; };
+		BF5421A1260188DB00599026 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF54219F260188DB00599026 /* MyCollectionViewCell.xib */; };
+		BF5421A826022CD600599026 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5421A726022CD500599026 /* MyCollectionViewController.swift */; };
 		BF85944D25CD798000DB2FA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85944C25CD798000DB2FA9 /* AppDelegate.swift */; };
 		BF85944F25CD798000DB2FA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85944E25CD798000DB2FA9 /* SceneDelegate.swift */; };
 		BF85945125CD798000DB2FA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85945025CD798000DB2FA9 /* ViewController.swift */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF45EB242607C70500D19E80 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		BF45EB252607C70500D19E80 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		BF541E9025FEAA4D00599026 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BF5421972601876D00599026 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		BF54219E260188DB00599026 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF54219F260188DB00599026 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		BF5421A726022CD500599026 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		BF85944925CD798000DB2FA9 /* ios-memeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-memeMe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF85944C25CD798000DB2FA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF85944E25CD798000DB2FA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +53,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF541E8F25FEAA1E00599026 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF5420BA26013D2900599026 /* cells */,
+				BF541E9025FEAA4D00599026 /* TabBarViewController.swift */,
+				BF5421972601876D00599026 /* MyTableViewController.swift */,
+				BF5421A726022CD500599026 /* MyCollectionViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		BF5420BA26013D2900599026 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				BF54219E260188DB00599026 /* MyCollectionViewCell.swift */,
+				BF54219F260188DB00599026 /* MyCollectionViewCell.xib */,
+				BF45EB242607C70500D19E80 /* MyTableViewCell.swift */,
+				BF45EB252607C70500D19E80 /* MyTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		BF85944025CD798000DB2FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +94,7 @@
 		BF85944B25CD798000DB2FA9 /* ios-memeMe */ = {
 			isa = PBXGroup;
 			children = (
+				BF541E8F25FEAA1E00599026 /* controllers */,
 				BFD8165625EC29F700AECB91 /* model */,
 				BF85944C25CD798000DB2FA9 /* AppDelegate.swift */,
 				BF85944E25CD798000DB2FA9 /* SceneDelegate.swift */,
@@ -136,8 +173,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF45EB272607C70500D19E80 /* MyTableViewCell.xib in Resources */,
 				BF85945925CD798300DB2FA9 /* LaunchScreen.storyboard in Resources */,
 				BF85945625CD798300DB2FA9 /* Assets.xcassets in Resources */,
+				BF5421A1260188DB00599026 /* MyCollectionViewCell.xib in Resources */,
 				BF85945425CD798000DB2FA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,8 +189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF85945125CD798000DB2FA9 /* ViewController.swift in Sources */,
+				BF5421A826022CD600599026 /* MyCollectionViewController.swift in Sources */,
+				BF45EB262607C70500D19E80 /* MyTableViewCell.swift in Sources */,
 				BFD8165825EC2A0A00AECB91 /* Meme.swift in Sources */,
+				BF5421982601876D00599026 /* MyTableViewController.swift in Sources */,
 				BF85944D25CD798000DB2FA9 /* AppDelegate.swift in Sources */,
+				BF5421A0260188DB00599026 /* MyCollectionViewCell.swift in Sources */,
+				BF541E9125FEAA4D00599026 /* TabBarViewController.swift in Sources */,
 				BF85944F25CD798000DB2FA9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
