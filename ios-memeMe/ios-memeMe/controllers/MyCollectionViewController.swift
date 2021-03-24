@@ -48,7 +48,7 @@ class MyCollectionViewController: UIViewController {
 
     @objc func addTapped() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: true, completion: nil)
     }

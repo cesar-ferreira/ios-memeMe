@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var albumButton: UIBarButtonItem!
@@ -35,9 +35,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
 
         sharedButton.isEnabled = imageView.image != nil
+        subscribeToKeyboardNotifications()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -140,7 +142,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
 }
 
-extension ViewController: UIImagePickerControllerDelegate {
+extension MemeEditorViewController: UIImagePickerControllerDelegate {
 
     private func pickerAnImage(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
@@ -163,35 +165,31 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension MemeEditorViewController: UITextFieldDelegate {
 
     private func setupTextFieldsUI() {
 
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
 
+        configure(self.topTextField)
+        configure(self.bottomTextField)
+    }
+
+    private func configure(_ textField: UITextField) {
         let memeTextAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.strokeColor: UIColor.black,
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth: 5.0
+            NSAttributedString.Key.strokeWidth: -3.0
         ]
-
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.tag == self.bottomTextField.tag ? subscribeToKeyboardNotifications() :
             unsubscribeFromKeyboardNotifications()
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 
