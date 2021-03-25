@@ -67,6 +67,16 @@ extension MyTableViewController: UITableViewDataSource {
         return 1
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let meme = memes?[indexPath.row]
+
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MemeDetailsViewController") as! MemeDetailsViewController
+        newViewController.image = meme!.memedImage
+
+        self.present(newViewController, animated: true, completion: nil)
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.reuseIdentifier, for: indexPath) as! MyTableViewCell

@@ -69,9 +69,14 @@ extension MyCollectionViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("tapped")
-    }
+        let meme = memes?[indexPath.row]
 
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MemeDetailsViewController") as! MemeDetailsViewController
+        newViewController.image = meme!.memedImage
+
+        self.present(newViewController, animated: true, completion: nil)
+    }
 }
 
 extension MyCollectionViewController: UICollectionViewDataSource {
